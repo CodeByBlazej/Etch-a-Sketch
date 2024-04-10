@@ -1,0 +1,15 @@
+body{
+  margin: 0;
+  height: 100vh;
+  display: flex;
+}
+
+
+.container{
+  background-color: aqua;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
