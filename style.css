@@ -2,15 +2,16 @@ body{
   margin: 0;
   height: 100vh;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
 .container{
   margin: 50px;
-  /* padding: 50px; */
+  padding: 50px;
   background-color: aqua;
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
   gap: 20px;
 }
