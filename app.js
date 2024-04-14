@@ -2,70 +2,46 @@ const container = document.querySelector(".container");
 const btn = document.querySelector(".btn");
 
 
-function createGrid(question) {
+function createGrid(size) {
   
   
-  for(let y = 1; y <= question; y++) {
+  for(let y = 1; y <= size; y++) {
     
     let newDivY = document.createElement("div");
     newDivY.className = "divY";
-
-    newDivY.style.cssText = 'display: flex; flex-grow: 1; justify-content: center; background-color: yellow;  ';
     container.appendChild(newDivY);
 
-    for(let x = 1; x <= question; x++) {
+    for(let x = 1; x <= size; x++) {
       let newDivX = document.createElement("div");
       newDivX.className = "divX";
-
-      newDivX.style.cssText =
-      'display:flex; flex-grow: 1;  background-color:red;';
       
       
+      newDivY.appendChild(newDivX);
       newDivX.addEventListener('mouseover', () => {
-          newDivX.style.backgroundColor = "pink";
-        });
-
-        newDivY.appendChild(newDivX);
-      }
+        newDivX.style.backgroundColor = "hotpink";
+        let currentOpacity = newDivX.style.opacity;
+        if(currentOpacity) {
+          newDivX.style.opacity = Number(currentOpacity) + 0.1;
+        } else {
+          newDivX.style.opacity = 0.1;
+        }
+      });
     }
   }
+}
   
   createGrid(16);
-  
-  
-  
+    
   btn.addEventListener('click', () => {
-    let question = prompt('How many squeres per side would you like your grid to be?');
-    // question = question.toUpperCase();
+    let size = prompt('How many squeres per side would you like your grid to be?');
   
-    if (question === null || question === '') {
+    if (size === null || size === '') {
       container.textContent = "";
       createGrid(16);
-    } else if (question > 0 || question <= 100) {
+    } else if (size > 0 && size <= 100) {
       container.textContent = "";
-      createGrid(question);
+      createGrid(size);
     } else {
       alert("You need to enter value from 1 to 100")
-    }
-
-
-
-    // if(question > 0 || question <= 100) {
-    //   container.textContent = "";
-    //   createGrid(question);
-    // } else if (question === null) {
-  
-    // } else {
-    //   alert("You need to enter value from 1 to 100")
-    // }
-
-    // if(question <= 0 || question > 100) {
-    //   alert('You entered too small or too big value! Try again with numbers from 1 to 100.');
-    // }  else {
-    //   container.textContent = "";
-    //   createGrid(question);
-    // }
-    
-  })
-  
-  
+    }    
+  });
