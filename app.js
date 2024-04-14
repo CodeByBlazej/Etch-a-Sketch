@@ -36,15 +36,36 @@ function createGrid(question) {
   
   btn.addEventListener('click', () => {
     let question = prompt('How many squeres per side would you like your grid to be?');
-    question = question.toUpperCase();
+    // question = question.toUpperCase();
   
-    if(question <= 0 || question > 100) {
-      alert('You entered too small or too big value! Try again with numbers from 1 to 100.');
-    } else {
+    if (question === null || question === '') {
+      container.textContent = "";
+      createGrid(16);
+    } else if (question > 0 || question <= 100) {
       container.textContent = "";
       createGrid(question);
+    } else {
+      alert("You need to enter value from 1 to 100")
     }
+
+
+
+    // if(question > 0 || question <= 100) {
+    //   container.textContent = "";
+    //   createGrid(question);
+    // } else if (question === null) {
   
+    // } else {
+    //   alert("You need to enter value from 1 to 100")
+    // }
+
+    // if(question <= 0 || question > 100) {
+    //   alert('You entered too small or too big value! Try again with numbers from 1 to 100.');
+    // }  else {
+    //   container.textContent = "";
+    //   createGrid(question);
+    // }
+    
   })
   
   
