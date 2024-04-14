@@ -4,6 +4,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: hsla(210deg, 38%, 15%, 0.85);
   /* justify-content: center; */
 }
 
@@ -13,7 +14,10 @@ body{
   margin: 20px;
   height: 400px;
   width: 400px;
-  background-color: aqua;
+  background-color: hotpink;
+  border: solid;
+  border-radius: 25px;
+  box-shadow: 10px 5px 5px rgba(255,105,180,0.5);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,5 +26,28 @@ body{
 
 .btn{
   margin: 20px;
-  background-color: blueviolet;
+  padding: 20px;
+  background-color: hotpink;
+  border: solid black;
+  font-size: 25px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: lightgray;
+  transition: 0.2s;
+}
+
+.divX{
+  display: flex;
+  flex-grow: 1;
+  background-color: lightgray;
+}
+
+.divY{
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  background-color: lightgray;
 }
